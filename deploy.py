@@ -9,10 +9,12 @@ install_solc("0.6.0")
 
 load_dotenv()
 
-account_addr = os.getenv("PORTFOLIO_ADDR")
-chain_id = int(os.getenv("PORTFOLIO_CHAINID"))
+net_endpoint = os.getenv("NET_ENDPOINT")
+chain_id = int(os.getenv("NET_CHAIN_ID"))
 
-utils = Utils('http://127.0.0.1:7545');
+account_addr = os.getenv("PORTFOLIO_ADDR")
+
+utils = Utils(net_endpoint);
 
 with open("./SimpleStorage.sol", "r") as file:
     simple_storage_file = file.read()

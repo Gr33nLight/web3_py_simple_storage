@@ -10,7 +10,7 @@ class Utils:
 
         self.private_key = os.getenv("PORTFOLIO_PRIVATE_KEY")
         self.account_addr = os.getenv("PORTFOLIO_ADDR")
-        self.chain_id = int(os.getenv("PORTFOLIO_CHAINID"))
+        self.chain_id = int(os.getenv("NET_CHAIN_ID"))
 
     def send_signed_transaction(self, tx):
         siegned_tx = self.w3.eth.account.sign_transaction(tx, private_key=self.private_key)
